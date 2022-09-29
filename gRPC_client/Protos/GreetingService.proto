@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.example.grpc;
+
+message HelloRequest {
+  string name =1;
+  int32 userID = 3;
+  int32 txid = 4;
+  int32 orderID = 5;
+  string refundAddress = 6;
+}
+
+message HelloResponse {
+  string greeting =1;
+}
+
+service GreetingService {
+  rpc greeting(HelloRequest) returns (HelloResponse);
+}
